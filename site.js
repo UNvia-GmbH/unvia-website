@@ -6,7 +6,7 @@
     var f=e.target, v=function(n){return (f.elements[n]&&f.elements[n].value||'').trim();};
     var s=f.elements['thema'], thema=s&&s.selectedIndex>0?s.options[s.selectedIndex].text:'';
     var betreff='Projektanfrage'+(thema?' – '+thema:'')+(v('unternehmen')?' | '+v('unternehmen'):'');
-    var lines=[v('name')?'Name: '+v('name'):'',v('unternehmen')?'Unternehmen: '+v('unternehmen'):'',v('email')?'E-Mail: '+v('email'):'',thema?'Interesse: '+thema:'','',v('nachricht')];
+    var lines=[v('name')?'Name: '+v('name'):'',v('unternehmen')?'Unternehmen: '+v('unternehmen'):'',v('email')?'E-Mail: '+v('email'):'',v('telefon')?'Telefon: '+v('telefon'):'',thema?'Interesse: '+thema:'','',v('nachricht')];
     window.location.href='mailto:info@unvia.online?subject='+encodeURIComponent(betreff)+'&body='+encodeURIComponent(lines.join('\n'));
     var n=document.getElementById('unvia-sent'); if(n) n.style.display='block';
   };

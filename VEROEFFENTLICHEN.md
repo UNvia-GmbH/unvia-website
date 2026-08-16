@@ -57,6 +57,10 @@ Ziel:  <benutzername>.github.io
 Falls Strato bei der Hauptdomain eine Weiterleitung („Domain-Weiterleitung", „Frame-Weiterleitung")
 voreingestellt hat: deaktivieren, sonst greifen die A-Records nicht.
 
+**Wichtig bei STRATO Mail Plus:** Die **MX-Einträge nicht verändern und nicht löschen** – sie steuern
+den E-Mail-Empfang. Geändert werden ausschließlich die A-Records der Hauptdomain und der
+`www`-CNAME. Vorhandene TXT-Einträge (SPF, DKIM, DMARC) bleiben ebenfalls unangetastet.
+
 Die Verteilung dauert meist 15 Minuten bis wenige Stunden, in Einzelfällen bis 24 Stunden.
 
 ## 6. HTTPS aktivieren
