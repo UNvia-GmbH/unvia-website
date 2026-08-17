@@ -13,11 +13,11 @@
       .then(function(r){
         if(!r.ok) throw new Error('failed');
         f.reset();
-        if(ok) ok.style.display='block';
+        if(ok) ok.style.display='flex';
         if(btn){btn.disabled=false;btn.innerHTML=label;}
       })
       .catch(function(){
-        if(err) err.style.display='block';
+        if(err) err.style.display='flex';
         if(btn){btn.disabled=false;btn.innerHTML=label;}
       });
   };

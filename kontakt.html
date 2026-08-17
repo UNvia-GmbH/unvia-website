@@ -143,10 +143,22 @@ label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6E6A64
         </button>
         <p style="margin:0;font-size:13px;line-height:1.6;color:#6E6A64">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu. Details in der <a href="datenschutz.html" style="border-bottom:1px solid #C0A98B">Datenschutzerklärung</a>.</p>
         
-          <p id="unvia-sent" style="display:none;margin:0;padding:16px 18px;border-left:2px solid #C0A98B;background:#FFFFFF;font-size:14px;line-height:1.6;color:#3C3A38">Vielen Dank – Ihre Anfrage ist bei uns eingegangen. Wir melden uns zeitnah bei Ihnen.</p>
+          <div id="unvia-sent" style="display:none;gap:16px;align-items:flex-start;padding:24px;background:#17181A;color:#FFFFFF">
+            <span aria-hidden="true" style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#C0A98B;color:#17181A;font-size:17px;font-weight:600;line-height:1">✓</span>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <strong style="font-family:Outfit,sans-serif;font-size:20px;font-weight:400;letter-spacing:-.01em">Anfrage gesendet.</strong>
+              <span style="font-size:15px;line-height:1.6;color:#C9C7C4">Vielen Dank – wir melden uns zeitnah bei Ihnen für ein unverbindliches Erstgespräch.</span>
+            </div>
+          </div>
         
         
-          <p id="unvia-error" style="display:none;margin:0;padding:16px 18px;border-left:2px solid #17181A;background:#FFFFFF;font-size:14px;line-height:1.6;color:#3C3A38">Das Senden hat nicht funktioniert. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an <a href="mailto:info@unvia.online" style="border-bottom:1px solid #C0A98B">info@unvia.online</a>.</p>
+          <div id="unvia-error" style="display:none;gap:16px;align-items:flex-start;padding:24px;background:#FFFFFF;border:1px solid #17181A">
+            <span aria-hidden="true" style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#17181A;color:#FFFFFF;font-size:17px;font-weight:600;line-height:1">!</span>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <strong style="font-family:Outfit,sans-serif;font-size:20px;font-weight:400;letter-spacing:-.01em">Das hat nicht funktioniert.</strong>
+              <span style="font-size:15px;line-height:1.6;color:#4A4845">Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an <a href="mailto:info@unvia.online" style="border-bottom:1px solid #C0A98B">info@unvia.online</a>.</span>
+            </div>
+          </div>
         
       </form>
 
