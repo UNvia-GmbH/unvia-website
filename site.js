@@ -3,12 +3,23 @@
   window.unviaMenu=menu;
   window.unviaMail=function(e){
     e.preventDefault();
-    var f=e.target, v=function(n){return (f.elements[n]&&f.elements[n].value||'').trim();};
-    var s=f.elements['thema'], thema=s&&s.selectedIndex>0?s.options[s.selectedIndex].text:'';
-    var betreff='Projektanfrage'+(thema?' – '+thema:'')+(v('unternehmen')?' | '+v('unternehmen'):'');
-    var lines=[v('name')?'Name: '+v('name'):'',v('unternehmen')?'Unternehmen: '+v('unternehmen'):'',v('email')?'E-Mail: '+v('email'):'',v('telefon')?'Telefon: '+v('telefon'):'',thema?'Interesse: '+thema:'','',v('nachricht')];
-    window.location.href='mailto:info@unvia.online?subject='+encodeURIComponent(betreff)+'&body='+encodeURIComponent(lines.join('\n'));
-    var n=document.getElementById('unvia-sent'); if(n) n.style.display='block';
+    var f=e.target;
+    var btn=f.querySelector('button[type=submit]');
+    var ok=document.getElementById('unvia-sent'), err=document.getElementById('unvia-error');
+    var label=btn?btn.innerHTML:'';
+    if(btn){btn.disabled=true;btn.innerHTML='Wird gesendet …';}
+    if(err) err.style.display='none';
+    fetch('https://formspree.io/f/xrpzykza',{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)})
+      .then(function(r){
+        if(!r.ok) throw new Error('failed');
+        f.reset();
+        if(ok) ok.style.display='block';
+        if(btn){btn.disabled=false;btn.innerHTML=label;}
+      })
+      .catch(function(){
+        if(err) err.style.display='block';
+        if(btn){btn.disabled=false;btn.innerHTML=label;}
+      });
   };
   var hdr=document.querySelector('header');
   if(hdr) window.addEventListener('scroll',function(){
